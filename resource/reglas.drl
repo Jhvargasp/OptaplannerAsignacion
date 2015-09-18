@@ -1,0 +1,109 @@
+import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScoreHolder;
+import java.util.List;
+import beans.Asignacion;
+import beans.Empleado;
+import utility.Utilidades
+global HardSoftScoreHolder scoreHolder;
+
+// ############################################################################
+// Hard constraints negative
+// ############################################################################
+
+rule "Penalizar los dias sin empleados"
+    when
+        Asignacion( empleado == null )
+    then
+    	int  num = -2;
+        scoreHolder.addHardConstraintMatch(kcontext, num);
+       	//System.out.println("Sin empleado;Penalizar los dias sin empleados;"+num);
+end
+
+rule "Translape"
+    when
+     	$empleado : Empleado()
+    	$a1 : Asignacion( empleado == $empleado )
+    	$a2 : Asignacion( empleado == $empleado, $a1.id != id, dia== $a1.dia ,requerimiento.turno.horaInicio== $a1.requerimiento.turno.horaInicio )
+    then
+    	int  num = -3;
+        scoreHolder.addHardConstraintMatch(kcontext, num);
+       	//System.out.println("Sin empleado;Penalizar los dias sin empleados;"+num);
+end
+
+
+
+
+/*
+rule "Penalizar turnos traslapados"
+    when
+        
+			$empleado : Empleado()
+			$asignaciones : List() from collect (
+					
+											 Asignacion(
+												            empleado == $empleado
+												        )
+				)
+			eval(Utilidades.Translapa($asignaciones))				
+        
+    then
+    	int  num = -200;
+        scoreHolder.addHardConstraintMatch(kcontext, num);
+		//System.out.println($empleado.getNombre()+";Penalizar turnos traslapados;"+num);
+end
+
+rule "No trabajar mas de x horas"
+    when
+        $empleado : Empleado()
+    	and	
+        $totalHoras : Number() from accumulate(
+            Asignacion(
+                empleado == $empleado,
+                $horas : requerimiento.turno.totalHoras
+            ),
+            sum($horas)
+        )
+        eval($totalHoras.doubleValue()>10)
+    then
+        	
+       	scoreHolder.addHardConstraintMatch(kcontext, -4);
+       	//System.out.println($empleado.getNombre()+";No trabajar mas de x horas extras por ciclo;"+"puntuación -4"+";total Horas;"+ $totalHoras);
+end
+
+rule "No trabajar menos de x horas"
+    when
+        $empleado : Empleado()
+		and 
+		$totalHoras : Number() from accumulate(
+            Asignacion(
+                empleado == $empleado,
+                $horas : requerimiento.turno.totalHoras
+            ),
+            sum($horas)
+        )
+        eval($totalHoras.doubleValue()<6)
+    then
+    	scoreHolder.addHardConstraintMatch(kcontext, -4);
+       //	System.out.println($empleado.getNombre()+";No trabajar menos de x horas por ciclo;"+"puntuación -4"+";total Horas;"+ $totalHoras);
+end
+
+// ############################################################################
+// Soft constraints
+// ############################################################################
+*/
+
+rule "Garantizar trabajar x horas"
+    when
+        $empleado : Empleado()
+		$totalHoras : Number( intValue >= 10 ) from accumulate(
+            Asignacion(
+                empleado == $empleado,
+                $horas : requerimiento.turno.totalHoras
+            ),
+            sum($horas)
+        )
+       // eval($totalHoras.intValue() <= 3 or $totalHoras.intValue() >= 10)
+    then
+    	int num = 7 ;
+	    scoreHolder.addSoftConstraintMatch(kcontext,  -$totalHoras.intValue() );
+    	//System.out.println($empleado.getNombre()+";Garantizar trabajar x horas por ciclo;"+"puntuación "+num+";Horas laborales;"+ $totalHoras);
+end

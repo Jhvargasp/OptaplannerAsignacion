@@ -1,0 +1,30 @@
+2015-09-17 18:02:18,912 [main] INFO  KieModule was added: MemoryKieModule[releaseId=org.default:artifact:1.0.0-SNAPSHOT]
+2015-09-17 18:02:20,054 [main] INFO  Solving started: time spent (134), best score (uninitialized/-20hard/0soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
+2015-09-17 18:02:20,184 [main] INFO  Construction Heuristic phase (0) ended: step total (10), time spent (264), best score (0hard/0soft).
+2015-09-17 18:02:20,187 [main] INFO  Solving ended: time spent (267), best score (0hard/0soft), average calculate count per second (119), environment mode (REPRODUCIBLE).
+2015-09-17 18:07:26,388 [main] ERROR Unable to build KieBaseModel:defaultKieBase
+[104,41]: [ERR 102] Line 104:41 mismatched input 'or' in rule "Garantizar trabajar x horas"
+[0,0]: Parser returned a null Package
+
+2015-09-17 18:08:32,766 [main] INFO  KieModule was added: MemoryKieModule[releaseId=org.default:artifact:1.0.0-SNAPSHOT]
+2015-09-17 18:08:33,752 [main] INFO  Solving started: time spent (97), best score (uninitialized/-20hard/-21soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
+2015-09-17 18:08:33,854 [main] INFO  Construction Heuristic phase (0) ended: step total (10), time spent (199), best score (0hard/-21soft).
+2015-09-17 18:10:13,655 [main] INFO  Local Search phase (1) ended: step total (794), time spent (100000), best score (0hard/-14soft).
+2015-09-17 18:10:13,657 [main] INFO  Solving ended: time spent (100001), best score (0hard/-14soft), average calculate count per second (66344), environment mode (REPRODUCIBLE).
+2015-09-18 07:43:19,284 [main] INFO  KieModule was added: MemoryKieModule[releaseId=org.default:artifact:1.0.0-SNAPSHOT]
+2015-09-18 07:43:21,005 [main] INFO  Solving started: time spent (230), best score (uninitialized/-20hard/-21soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
+2015-09-18 07:43:21,127 [main] INFO  Construction Heuristic phase (0) ended: step total (10), time spent (352), best score (0hard/-21soft).
+2015-09-18 07:45:00,775 [main] INFO  Local Search phase (1) ended: step total (834), time spent (100000), best score (0hard/-14soft).
+2015-09-18 07:45:00,775 [main] INFO  Solving ended: time spent (100000), best score (0hard/-14soft), average calculate count per second (70314), environment mode (REPRODUCIBLE).
+2015-09-18 07:48:55,221 [main] INFO  KieModule was added: MemoryKieModule[releaseId=org.default:artifact:1.0.0-SNAPSHOT]
+2015-09-18 07:48:56,216 [main] INFO  Solving started: time spent (102), best score (uninitialized/-20hard/0soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
+2015-09-18 07:48:56,335 [main] INFO  Construction Heuristic phase (0) ended: step total (10), time spent (221), best score (0hard/-10soft).
+2015-09-18 07:49:56,146 [main] INFO  KieModule was added: MemoryKieModule[releaseId=org.default:artifact:1.0.0-SNAPSHOT]
+2015-09-18 07:49:57,282 [main] INFO  Solving started: time spent (130), best score (uninitialized/-20hard/0soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
+2015-09-18 07:49:57,389 [main] INFO  Construction Heuristic phase (0) ended: step total (10), time spent (237), best score (0hard/-10soft).
+2015-09-18 07:50:27,152 [main] INFO  Local Search phase (1) ended: step total (7), time spent (30000), best score (0hard/-10soft).
+2015-09-18 07:50:27,152 [main] INFO  Solving ended: time spent (30000), best score (0hard/-10soft), average calculate count per second (72256), environment mode (REPRODUCIBLE).
+2015-09-18 07:51:39,211 [main] INFO  KieModule was added: MemoryKieModule[releaseId=org.default:artifact:1.0.0-SNAPSHOT]
+2015-09-18 07:51:40,253 [main] INFO  Solving started: time spent (98), best score (uninitialized/-20hard/0soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
+2015-09-18 07:51:40,360 [main] INFO  Construction Heuristic phase (0) ended: step total (10), time spent (204), best score (0hard/0soft).
+2015-09-18 07:51:40,362 [main] INFO  Solving ended: time spent (207), best score (0hard/0soft), average calculate count per second (202), environment mode (REPRODUCIBLE).

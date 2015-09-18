@@ -1,0 +1,4 @@
+2015-09-08 10:07:46,883 [main] INFO  KieModule was added: MemoryKieModule[releaseId=org.default:artifact:1.0.0-SNAPSHOT]
+2015-09-08 10:07:47,274 [main] INFO  Solving started: time spent (62), best score (uninitialized/0hard/0soft), environment mode (REPRODUCIBLE), random (JDK with seed 0).
+2015-09-08 10:07:47,341 [main] INFO  Construction Heuristic phase (0) ended: step total (10), time spent (129), best score (0hard/0soft).
+2015-09-08 10:07:47,343 [main] INFO  Solving ended: time spent (131), best score (0hard/0soft), average calculate count per second (167), environment mode (REPRODUCIBLE).
